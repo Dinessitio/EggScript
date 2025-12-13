@@ -1,7 +1,6 @@
 local TpAmount = Config.Accounts * Config.Accuracy
 local TESTING = true
 local tp = true
-local Rejoining = true
 
 -- принт настроек
 if TESTING then
