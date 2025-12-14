@@ -1,6 +1,6 @@
 local Config = {
-    Accounts = _G.Accounts
-    Accuracy = _G.Accuracy
+    Accounts = _G.Accounts,
+    Accuracy = _G.Accuracy,
     Rejoining = _G.Rejoining
 }
 local TpAmount = Config.Accounts * Config.Accuracy
