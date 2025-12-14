@@ -1,3 +1,4 @@
+-- начало
 local Config = {
     Accounts = _G.Accounts,
     Accuracy = _G.Accuracy,
@@ -6,14 +7,19 @@ local Config = {
 local TpAmount = Config.Accounts * Config.Accuracy
 local TESTING = true
 local tp = true
+if TpAmount > 46 then
+warn("❌ Ошибка скрипт остановлен: Слишком много попыток.")
+return
+end
 
--- принт настроек
+-- принт версии
 if TESTING then
 print("🚀 Запуск скрипта: Получение Яиц (Тестовая Версия)")
 else
 print("🚀 Запуск скрипта: Получение Яиц")
 end
 print("----------------------------------------")
+-- настроечки
 print("⚙ Параметры скрипта")
 print("👤 Количество аккаунтов: " .. Config.Accounts .. "")
 print("🔰 Аккуратность: ".. Config.Accuracy .. "")
@@ -30,14 +36,14 @@ local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "MyMenuGui"
 screenGui.ResetOnSpawn = false
 
--- Проверка на дублирование
+-- Проверка
 if LocalPlayer.PlayerGui:FindFirstChild(screenGui.Name) then
     warn("Меню уже существует")
     tp = false
     return
 end
 
--- Поиск PlayerGui
+-- Поиск playergui
 local playerGui = LocalPlayer:WaitForChild("PlayerGui", 3)
 if not playerGui then
     warn("PlayerGui не найден")
@@ -47,7 +53,7 @@ end
 
 screenGui.Parent = playerGui
 
--- Создание заднего фона
+-- Фон
 local backscreen = Instance.new("Frame")
 backscreen.Name = "Background"
 backscreen.Size = UDim2.new(2, 0, 2, 0)  
@@ -61,7 +67,7 @@ tp = false
 return
 end
 
--- Создание текста1
+-- Статусник
 local label = Instance.new("TextLabel")
 label.Name = "StatusLabel"
 label.Size = UDim2.new(0, 300, 0, 100)
@@ -74,7 +80,7 @@ label.TextScaled = true
 label.Font = Enum.Font.SourceSansBold
 label.Parent = backscreen
 
--- Создание текста2
+-- Создание ватермарки
 local label1 = Instance.new("TextLabel")
 label1.Name = "CreditsLabel"
 label1.Size = UDim2.new(0, 300, 0, 100)
@@ -121,6 +127,7 @@ for i = 1, TpAmount do
 end
 -- Rejoining
 if Config.Rejoining then
+    print("🔁 Успешно! Перезаходим...")
 local TeleportService = game:GetService("TeleportService")
  
 local Rejoin = coroutine.create(function()
