@@ -7,10 +7,6 @@ local Config = {
 local TpAmount = Config.Accounts * Config.Accuracy
 local TESTING = true
 local tp = true
-if TpAmount > 46 then
-warn("❌ Скрипт остановлен: Слишком много попыток.")
-return
-end
 
 -- принт версии
 if TESTING then
@@ -26,6 +22,10 @@ print("🔰 Аккуратность: ".. Config.Accuracy .. "")
 print("🔁 Перезаход: " .. (Config.Rejoining and "Да" or "Нет"))
 print("🕐 Количество попыток: ".. TpAmount .. "")
 print("----------------------------------------")
+if TpAmount > 46 then
+warn("❌ Скрипт остановлен: Слишком много попыток.")
+return
+end
 
 -- Получение сервисов
 local Players = game:GetService("Players")
