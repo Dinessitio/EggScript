@@ -8,7 +8,7 @@ local TpAmount = Config.Accounts * Config.Accuracy
 local TESTING = true
 local tp = true
 if TpAmount > 46 then
-warn("❌ Ошибка скрипт остановлен: Слишком много попыток.")
+warn("❌ Скрипт остановлен: Слишком много попыток.")
 return
 end
 
