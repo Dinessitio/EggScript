@@ -116,8 +116,8 @@ warn("❌ Скрипт остановлен")
 warn("Не удалось создать спасательный part")
 return
 end
-if Config.Accounts > 3 then
-        warn("Количество аккаунтов больше 3, возможны смерти от пещерных пауков.")
+if TpAmount > 15 then
+        warn("Количество попыток больше 15, возможны смерти от пещерных пауков.")
 end
 local rootpart = game.Players.LocalPlayer.Character.HumanoidRootPart
 if tp then
