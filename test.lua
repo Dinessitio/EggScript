@@ -27,7 +27,7 @@ warn("❌ Скрипт остановлен")
     warn("Неверно указано количество аккаунтов.")
 return
 end
-if Config.Accuracy > 30 then
+if TpAmount > 30 then
    warn("❌ Скрипт остановлен")
     warn("Неверно указана аккуратность.")
     return
