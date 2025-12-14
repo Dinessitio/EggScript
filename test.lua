@@ -43,6 +43,7 @@ screenGui.ResetOnSpawn = false
 
 -- Проверка
 if LocalPlayer.PlayerGui:FindFirstChild(screenGui.Name) then
+    warn("❌ Скрипт остановлен")
     warn("Меню уже существует")
     tp = false
     return
@@ -51,6 +52,7 @@ end
 -- Поиск playergui
 local playerGui = LocalPlayer:WaitForChild("PlayerGui", 3)
 if not playerGui then
+    warn("❌ Скрипт остановлен")
     warn("PlayerGui не найден")
     tp = false
     return
@@ -67,6 +69,7 @@ backscreen.BackgroundColor3 = Color3.new(0, 0, 0)
 backscreen.BackgroundTransparency = 0
 backscreen.Parent = screenGui
 if not backscreen then
+    warn("❌ Скрипт остановлен")
 warn("Не удалось создать фон")
 tp = false
 return
@@ -77,7 +80,7 @@ local label = Instance.new("TextLabel")
 label.Name = "StatusLabel"
 label.Size = UDim2.new(0, 300, 0, 100)
 label.Position = UDim2.new(0.5, -150, 0.5, -50)
-label.Text = "Статус: Получаем яйки"
+label.Text = "Статус: Получаем яйца"
 label.TextColor3 = Color3.new(1, 1, 1)
 label.BackgroundTransparency = 1
 label.TextSize = 48
@@ -109,8 +112,12 @@ prt.CFrame = CFrame.new(41.7359543, 147.855878, -531.89093, 0.979220033, -0, -0.
 prt.Size = prt.Size + Vector3.new(8, 0.1, 8)
 if not prt then
 tp = false
+warn("❌ Скрипт остановлен")
 warn("Не удалось создать спасательный part")
 return
+end
+if Config.Accounts > 3 then
+        warn("Количество аккаунтов больше 3, возможны смерти от пещерных пауков.")
 end
 local rootpart = game.Players.LocalPlayer.Character.HumanoidRootPart
 if tp then
