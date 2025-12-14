@@ -120,7 +120,7 @@ for i = 1, TpAmount do
     end
 end
 -- Rejoining
-if Rejoining then
+if Config.Rejoining then
 local TeleportService = game:GetService("TeleportService")
  
 local Rejoin = coroutine.create(function()
