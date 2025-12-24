@@ -1,4 +1,4 @@
-return {
+return(
     ["CFD79135-C9C4-46ED-838B-835A396955EF"] = "TTEST1",
     ["CFD79135-C9C4-46ED-838B-835A396955EF"] = "magic456",
-}
+)
